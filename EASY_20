@@ -1,0 +1,34 @@
+1.Write a query to get all employee detail from "EmployeeDetail" table.
+select *from employeedetails;
+
+2.Write a query to get only "FirstName" column from "EmployeeDetail" table
+SELECT first_name from employeedetails;
+
+3.Write a query to get FirstName in upper case as "First Name".
+select upper(first_name) as first_name FROM employeedetails;
+
+4.Write a query to get FirstName in lower case as "First Name". 
+SELECT lower(first_name) as first_name from employeedetails; 
+
+5.Write a query for combine FirstName and LastName and display it as "Name" (also include white space between first name & last name) 
+SELECT concat(first_name,' ', last_name) as name from employeedetails;
+
+6.Select employee detail whose name is "Vikas" 
+select * from employeedetails
+where first_name = 'Vikas';
+
+7.Get all employee detail from EmployeeDetail table whose "FirstName" start with latter 'a'. 
+SELECT *from employeedetails
+where first_name like 'a%';
+
+8.Get all employee details from EmployeeDetail table whose "FirstName" contains 'k'
+SELECT *from employeedetails
+where first_name like '%k%';
+
+9.Get all employee details from EmployeeDetail table whose "FirstName" end with 'h' 
+SELECT *from employeedetails
+WHERE first_name like '%h';
+
+10.Get all employee detail from EmployeeDetail table whose "FirstName" start with any single character between 'a-p' 
+SELECT *from employeedetails
+where first_name regexp '^[a-p].*';
