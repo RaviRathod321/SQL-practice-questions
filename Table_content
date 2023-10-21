@@ -1,0 +1,20 @@
+CREATE DATABASE 'database_name'
+
+CREATE TABLE employeedetails (
+employeeID int(20) auto_increment primary key,
+first_name varchar(120),
+last_name varchar(120),
+salary varchar (160),
+joining_date varchar(150),
+department varchar(50),
+gender varchar(100)); 
+
+
+INSERT INTO Employees (employeeID, first_name, last_name, salary, joining_date, department, gender)
+VALUES
+(1, 'Vikas', 'Ahlawat', 600000, 1996, 'IT', 'Male'),
+(2, 'Nikita', 'Jain', 530000, 1996, 'HR', 'Female'),
+(3, 'Ashish', 'Kumar', 100000, 1996, 'IT', 'Male'),
+(4, 'Nikhil', 'Sharma', 430000, 1996, 'TS', 'Male'),
+(5, 'Anish', 'Kadian', 900000, 1996, 'HR', 'Male'),
+(6, 'Vinod', 'Kumar', 850000, 1996, 'PAYROLL', 'Male');
