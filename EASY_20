@@ -32,3 +32,37 @@ WHERE first_name like '%h';
 10.Get all employee detail from EmployeeDetail table whose "FirstName" start with any single character between 'a-p' 
 SELECT *from employeedetails
 where first_name regexp '^[a-p].*';
+
+11.Get all employee detail from EmployeeDetail table whose "FirstName" not start with any single character between 'a-p'
+SELECT * from employeedetails
+where first_name not like '[a-p]%'
+
+12.#Get all employee detail from EmployeeDetail table whose "Gender" end with 'le' and contain 4 letters. The Underscore(_) Wildcard Character represents any single character.
+SELECT *from employeedetails
+where gender like '__le' ; #Note there are two underscores
+
+13.Get all employee detail from EmployeeDetail table whose "FirstName" start with 'A' and contain 5 letters.
+select *from employeedetails
+where first_name like 'A____';
+
+14.Get all employee detail from EmployeeDetail table whose "FirstName" containing '%'. ex:-"Vik%as".
+#There are no such values with "Vik%as" the TABLE will return empty
+
+15.Get all unique "Department" from EmployeeDetail table.
+SELECT DISTINCT(department) from employeedetails;
+
+16.Get the highest "Salary" from EmployeeDetail table.
+SELECT max(salary) from employeedetails;
+
+17.Get the lowest "Salary" from EmployeeDetail table.
+SELECT min(salary) from employeedetails;
+
+18.Show "JoiningDate" in "dd mmm yyyy" format, ex- "15 Feb 2013"
+SELECT DATE_FORMAT(joining_date, '%d %b %Y') AS formated_date
+FROM employeedetails;
+
+19.Get only Year part of "JoiningDate"
+SELECT year (joining_date) from employeedetails;
+
+20.Get only Month part of "JoiningDate".
+SELECT month (joining_date) from employeedetails;
