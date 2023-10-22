@@ -28,4 +28,33 @@ group by department;
     GROUP by department
     order by total_sum asc;
 
+7.#Write the query to get the department and department wise total(sum) salary, display it in descending order according to salary.
+SELECT department, sum(salary) as Total_sum
+from employeedetails
+group by department
+order by total_sum desc;
 
+8.#Write the query to get the department, total no. of departments, total(sum) salary with respect to department from "EmployeeDetail" table.
+SELECT department, count(*) as  dept_count, sum(salary) as total_sum
+from employeedetails
+GROUP by department;
+
+9.#Get department wise average salary from "EmployeeDetail" table order by salary ascending
+SELECT department, avg(salary) as AVG_salary 
+from employeedetails
+GROUP by department
+order by AVG_salary ASC; 
+
+10.#Department wise maximum salary from "EmployeeDetail" table order by salary ascending.
+SELECT department, MAX(salary) AS max_Salary
+from employeedetails
+group by department
+order by max_Salary asc;
+
+11.Get department wise minimum salary from "EmployeeDetail" table order by salary ascending
+select department, min(salary) as min_Salary
+from employeedetails
+group by department
+order by min_Salary asc;
+
+12.
