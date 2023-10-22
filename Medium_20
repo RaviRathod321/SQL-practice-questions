@@ -57,4 +57,10 @@ from employeedetails
 group by department
 order by min_Salary asc;
 
-12.
+12.#Write down the query to fetch Project name assign to more than one Employee
+select projectname, count(*) as emp_no 
+from projectdetail
+group by ProjectName
+having emp_no > 1;
+
+13.
