@@ -18,3 +18,16 @@ VALUES
 (4, 'Nikhil', 'Sharma', 430000, 1996, 'TS', 'Male'),
 (5, 'Anish', 'Kadian', 900000, 1996, 'HR', 'Male'),
 (6, 'Vinod', 'Kumar', 850000, 1996, 'PAYROLL', 'Male');
+
+
+Make use of this sytax to update the joining date column
+UPDATE employeedetails
+SET joining_date = CASE 
+    WHEN employeeID = 1 THEN '2013-12-15'
+    WHEN employeeID = 2 THEN '2014-06-19'
+    WHEN employeeID = 3 THEN '1993-04-16'
+    WHEN employeeID = 4 THEN '1997-05-25'
+    WHEN employeeID = 5 THEN '2022-03-26'
+    WHEN employeeID = 6 THEN '2021-04-24'
+    ELSE joining_date 
+END;
