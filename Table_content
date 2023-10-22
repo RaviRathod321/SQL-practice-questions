@@ -20,7 +20,8 @@ VALUES
 (6, 'Vinod', 'Kumar', 850000, 1996, 'PAYROLL', 'Male');
 
 
-Make use of this sytax to update the joining date column
+Make use of this syntax to update the joining date column
+
 UPDATE employeedetails
 SET joining_date = CASE 
     WHEN employeeID = 1 THEN '2013-12-15'
