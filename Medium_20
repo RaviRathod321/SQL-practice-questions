@@ -1,0 +1,31 @@
+1.Get employee details from "EmployeeDetail" table whose Salary greater than 600000
+SELECT * from employeedetails
+where salary > 60000;
+
+2.Get employee details from "EmployeeDetail" table whose Salary less than 700000
+SELECT * from employeedetails
+WHERE salary < 700000;
+
+3.Get employee details from "EmployeeDetail" table whose Salary between 500000 and 600000
+SELECT *from employeedetails
+where salary between 500000 and 600000;
+
+4.Select second highest salary from "EmployeeDetail" table. 
+select salary as second_highest_Salary from employeedetails
+where salary < (SELECT max(salary) from employeedetails)
+limit 1;
+
+5.Write the query to get the department and department wise total(sum) salary from "EmployeeDetail" table.
+SELECT department, sum(salary) as total_Sum
+from employeedetails
+group by department;
+
+6.Write the query to get the department and department wise total(sum) salary, 
+  display it in ascending order according to salary.
+    
+    SELECT department, sum(salary) as total_sum
+    from employeedetails
+    GROUP by department
+    order by total_sum asc;
+
+
