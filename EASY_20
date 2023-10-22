@@ -66,3 +66,53 @@ SELECT year (joining_date) from employeedetails;
 
 20.Get only Month part of "JoiningDate".
 SELECT month (joining_date) from employeedetails;
+
+21.Get all employee details from EmployeeDetail table whose joining date between "1992-01-01" and "2013-12-01".
+SELECT * from employeedetails
+where joining_date between "1992-01-01" and "2013-12-01";
+
+22.Get all employee details from EmployeeDetail table whose joining month is Jan(1).
+SELECT * from employeedetails
+WHERE month(joining_date) = 1;
+
+23.Get how many employee exist in "EmployeeDetail" table.
+SELECT count(*) from employeedetails;
+
+24.#Select only one/top 1 record from "EmployeeDetail" table.
+
+SELECT *from employeedetails
+limit 1;
+
+#This will be different in terms of SQL server
+SELECT top 1 from employeedetails;
+
+25.Select all employee detail with First name "Vikas","Ashish", and "Nikhil".
+SELECT * from employeedetails
+where first_name in ("Vikas","Ashish", "Nikhil");
+
+26.Select all employee detail with First name not in "Vikas","Ashish", and "Nikhil".
+SELECT * from employeedetails
+where first_name not in ("Vikas","Ashish", "Nikhil");
+
+27.Select first name from "EmployeeDetail" table after removing white spaces from right side
+SELECT RTRIM(first_name) from employeedetails;
+
+28.Select first name from "EmployeeDetail" table after removing white spaces from left side
+SELECT LTRIM(first_name) from employeedetails;
+
+29.Display first name and Gender as M/F.(if male then M, if Female then F)
+SELECT 
+
+      CASE 
+      when gender = 'MALE' then  'M'
+      when gender = 'FEMALE' then 'F'
+      END AS GENDER
+
+FROM employeedetails;
+
+30.Select first name from "EmployeeDetail" table prifixed with "Hello "
+SELECT CONCAT ('Hello',' ' ,first_name)
+FROM employeedetails;
+
+
+
