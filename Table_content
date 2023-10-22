@@ -32,3 +32,23 @@ SET joining_date = CASE
     WHEN employeeID = 6 THEN '2021-04-24'
     ELSE joining_date 
 END;
+
+
+#New_Table Project details 
+
+create table Projectdetail (
+projectDetails int(50) auto increment primary key,
+Employee_Details int(50),
+ProjectName varchar(100)
+);
+
+insert into projectdetail (Employee_Details, ProjectName) values (1, 'Task Track');
+insert into projectdetail (Employee_Details, ProjectName) values (1, 'clp');
+insert into projectdetail (Employee_Details, ProjectName) values (1, 'Track Track');
+insert into projectdetail (Employee_Details, ProjectName) values (2, 'survey management	');
+insert into projectdetail (Employee_Details, ProjectName) values (3, 'HR management');
+insert into projectdetail (Employee_Details, ProjectName) values (3, 'Task Track');
+insert into projectdetail (Employee_Details, ProjectName) values (3, 'GRS');
+insert into projectdetail (Employee_Details, ProjectName) values (3, 'DDS');
+insert into projectdetail (Employee_Details, ProjectName) values (4, 'HR management');
+insert into projectdetail (Employee_Details, ProjectName) values (6, 'GL management');
