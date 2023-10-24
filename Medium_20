@@ -63,4 +63,57 @@ from projectdetail
 group by ProjectName
 having emp_no > 1;
 
-13.
+13.Get employee name, project name order by firstname from "EmployeeDetail" and "ProjectDetail" for those employee which have assigned project already.
+
+select first_name , projectName
+from employeedetails a
+inner join projectdetail b
+on a.employeeID = b.ProjectDetailID
+order by first_name;
+
+14.Get employee name, project name order by firstname from "EmployeeDetail" and "ProjectDetail" for all employee even they have not assigned project.
+
+select first_name, projectName
+from employeedetails a
+left outer join projectdetail b
+on a.employeeID = b.ProjectDetailID;
+
+15.#Get employee name, project name order by firstname from "EmployeeDetail" and "ProjectDetail" for all employee if project is not assigned then display "-No Project Assigned".
+
+select first_name, projectname
+from employeedetails a
+left outer join projectdetail b
+on a.employeeID = b.ProjectDetailID
+order by first_name;
+
+16.#Get all project name even they have not matching any employeeid, in left table, order by firstname from "EmployeeDetail" and "ProjectDetail".
+
+select firstname, projectname 
+from employeedetails a
+left outer join projectdetail b
+on a.employeeID = b.ProjectDetailID
+order by firstname;
+
+17. #Get complete record(employeename, project name) from both tables([EmployeeDetail],[ProjectDetail]), if no match found in any table then show NULL.
+NOTE : sql doesn't support the FULL OUTER JOIN we have used the UNION
+
+SELECT a.first_name as employee_name, b.projectname
+from employeedetails a
+left join projectdetail b
+on a.employeeID = b.ProjectDetailID
+union
+SELECT a.first_name as employee_name, b.projectname
+from employeedetails a
+right join projectdetail b
+on a.employeeID = b.ProjectDetailID
+where a.employeeID is null;
+
+18.#Write a query to find out the employeename who has not assigned any project, and display "-No Project Assigned"( tables :- [EmployeeDetail],[ProjectDetail]).
+
+SELECT a.first_name AS EmployeeDetail, coalesce(b.projectName -'No project assigned') as prrojectDetail
+from employeedetails a 
+left outer join projectdetail b 
+ON a.employeeID = b.ProjectDetailID
+and b.ProjectDetailID is null;
+
+19.
